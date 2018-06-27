@@ -1,9 +1,8 @@
-require_relative '../models/stadium.rb'
+require_relative '../models/author.rb'
 
-Stadium.destroy_all
+Author.destroy_all
 
-Stadium.create(
-  :name => 'Emirates',
-  :capacity => 60000,
-  :country => 'UK'
+Author.create(
+  :name => 'Tom',
+  :age => 100
 )

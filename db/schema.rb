@@ -10,17 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_010106) do
+ActiveRecord::Schema.define(version: 2018_06_27_022211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "stadia", force: :cascade do |t|
+  create_table "authors", force: :cascade do |t|
     t.string "name"
-    t.integer "capacity"
-    t.string "country"
+    t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "books", force: :cascade do |t|
+    t.integer "author_id"
+    t.string "name"
+    t.integer "pages"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "books", "authors"
 end
