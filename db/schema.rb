@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 2018_06_27_022211) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.integer "author_id"
     t.string "name"
     t.integer "pages"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "author_id"
   end
 
-  add_foreign_key "books", "authors"
+  add_foreign_key "books", "authors", name: "fk_books_authors"
 end
